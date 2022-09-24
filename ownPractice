@@ -1,0 +1,32 @@
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+const car1 = new Car('BMW', 120);
+const car2 = new Car('Mercedes', 95);
+ 
+let word1 = 'Accelerate';
+let word2 = 'Brake';
+ 
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} ${word1} ${this.speed} km/h`);
+};
+car1.accelerate();
+car1.accelerate();
+car1.accelerate();
+car2.accelerate();
+car2.accelerate();
+car2.accelerate();
+ 
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(`${this.make} ${word2} ${this.speed} km/h`);
+};
+ 
+car1.brake();
+car1.brake();
+car1.brake();
+car2.brake();
+car2.brake();
+car2.brake();
